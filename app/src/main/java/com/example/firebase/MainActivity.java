@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<String> task) {
                 if (!task.isSuccessful()) {
-                    System.out.println("Fetching FCM registration token failed");
+                    Log.i("Msg" ,"Fetching FCM registration token failed");
                     return;
                 }
 
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(token);
                 Toast.makeText(MainActivity.this, "Device token is " + token, Toast.LENGTH_SHORT).show();
                 Log.i("Token", token.toString());
-                System.out.println(token);
                 etToken.setText(token);
             }
         });
